@@ -47,7 +47,7 @@ print(new_enemy) # error because it is nested in create_enemy()
 # local scope only applies when variable is in a new function
 
 enemies = 1
-def increase_enemics():
+def increase_enemies():
   global enemies  # explicitly calls a global variable
   enemies += 1
 
