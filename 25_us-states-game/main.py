@@ -28,21 +28,21 @@ guessed_states = [] # save guess states to export as csv
 while len(guessed_states) < 50:
     answer_state = screen.textinput(title=f"{len(guessed_states) }/50 States Correct", prompt="What's another state's name?").lower()
     if answer_state == "exit":
+        # states to learn saved in csv file
+        missing_states = [s for s in states_names if s not in guessed_states]  # list comprehension
+        missing_states = pandas.DataFrame(missing_states)
+        missing_states.to_csv("states_to_learn.csv")
         break
     if answer_state in data["state"].values:
         print("Correct")
         print_state(answer_state)
         guessed_states.append(answer_state)
 
-# states to learn saved in csv file
-missing_states = list(set(states_names) - set(guessed_states))
-missing_states = pandas.DataFrame(missing_states)
-missing_states.to_csv("states_to_learn.csv")
 
 
 screen.exitonclick()
 
- 
+
 
 # If we needed to get the coordinates ourselves:
 # # get coordinates of a click
