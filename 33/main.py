@@ -13,7 +13,7 @@ MY_POSITION = (MY_LAT, MY_LONG)
 my_email = ""
 my_smtp = "smtp.gmail.com"
 my_password = ""
-my_name = ""
+recipient_email = ""
 
 
 
@@ -66,5 +66,5 @@ if position_close(MY_POSITION, iss_position) and dark(MY_POSITION):
         connection.login(user=my_email, password=my_password)
         connection.sendmail(
             from_addr=my_email,
-            to_addrs=email,
+            to_addrs=recipient_email,
             msg=f"Subject:Look up! ⬆\n\nThe ISS is above you!")
