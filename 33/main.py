@@ -2,7 +2,7 @@
 
 import requests
 from datetime import datetime
-import pytz
+import smtplib
 
 
 MY_LAT = 43.156578
@@ -56,11 +56,7 @@ def dark(my_position):
         return True
 
 
-print(sunrise)
-print(sunset)
-print(current_hour)
-
-if position_close(MY_POSITION, iss_position) and dark(MY_POSITION):
+if position_close(MY_POSITION) and dark(MY_POSITION):
     with smtplib.SMTP(my_smtp) as connection:
         connection.starttls()
         connection.login(user=my_email, password=my_password)
