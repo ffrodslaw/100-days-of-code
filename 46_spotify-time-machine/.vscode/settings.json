@@ -1,0 +1,7 @@
+{
+    "cSpell.words": [
+        "spotipy"
+    ],
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.autoImportUserSymbols": true
+}
