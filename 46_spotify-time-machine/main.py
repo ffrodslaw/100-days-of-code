@@ -20,7 +20,7 @@ titles_list = [song.get_text(strip=True) for song in song_titles]
 scope = "playlist-modify-public"
 USER = os.environ.get("SPOTIFY_USER")
 
-spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials)
+# establish connection
 spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
 # create playlist
