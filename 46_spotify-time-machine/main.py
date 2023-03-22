@@ -20,7 +20,7 @@ titles_list = [song.get_text(strip=True) for song in song_titles]
 scope = "playlist-modify-public"
 USER = os.environ.get("SPOTIFY_USER")
 
-# spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials)
+spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials)
 spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
 # create playlist
@@ -44,6 +44,6 @@ playlists = spotify.user_playlists(user=USER)["items"]
 playlist_id = [playlist["id"] for playlist in playlists if playlist["name"] == playlist_name][0]
 
 # add songs
-spotify.user_playlist_add_tracks(user= USER,
+spotify.user_playlist_add_tracks(user=USER,
                                  playlist_id=playlist_id,
                                  tracks=uris)
