@@ -1,11 +1,5 @@
----
-title: "Spotify Time Machine"
-output: github_document
----
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# Spotify Time Machine
 
 This app was created as coursework for day 46 of Angela Yu's 100 Days of Code Class. It is a simple command line program that prompts the user to enter a date (from 1990-01-01 onwards) and creates a Spotify playlist containing that week's Billboard Hot 100. It currently only searches by the song title which sometimes leads to Spotify picking the wrong song. I will work on fixing that in the future.
 
